@@ -1,6 +1,5 @@
 import 'dart:io';
 
-/// 🔹 Encapsulation
 class Account {
   String _accountNumber;
   String _owner;
@@ -26,7 +25,7 @@ class Account {
       _balance -= amount;
       print("Withdraw successful. New balance: $_balance");
     } else {
-      print("Insufficient balance!");
+      print("Insufficient balance.");
     }
   }
 
@@ -35,7 +34,6 @@ class Account {
   }
 }
 
-/// 🔹 Bank Class
 class Bank {
   List<Account> accounts = [];
 
@@ -53,7 +51,7 @@ class Bank {
     double balance = double.parse(stdin.readLineSync()!);
 
     accounts.add(Account(number, name, pass, balance));
-    print("Account created successfully!");
+    print("Account created successfully.");
   }
 
   Account? findAccount(String number) {
@@ -74,7 +72,7 @@ class Bank {
     var receiver = findAccount(to);
 
     if (sender == null || receiver == null) {
-      print("Account not found!");
+      print("Account not found.");
       return;
     }
 
@@ -84,7 +82,7 @@ class Bank {
     if (sender.getBalance() >= amount) {
       sender.withdraw(amount);
       receiver.deposit(amount);
-      print("Transfer successful!");
+      print("Transfer successful.");
     } else {
       print("Not enough balance.");
     }
@@ -115,7 +113,7 @@ void main() {
       var acc = bank.findAccount(number);
 
       if (acc == null) {
-        print("Account not found!");
+        print("Account not found.");
         continue;
       }
 
@@ -148,7 +146,7 @@ void main() {
           }
         }
       } else {
-        print("Wrong password!");
+        print("Wrong password.");
       }
     }
 
@@ -157,8 +155,9 @@ void main() {
     }
 
     else {
-      print("Thank you!");
+      print("Thank you.");
       break;
     }
   }
+
 }
